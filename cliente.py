@@ -1,5 +1,3 @@
-
-
 class Cliente:
     def __init__(self, nome,cpf, cep,n_residencial, endereco, telefone):
         self.nome = nome

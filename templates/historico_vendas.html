@@ -1,0 +1,30 @@
+{% extends 'index.html' % }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Vendas</title>
+</head>
+<body>
+    <h1>Histórico de Vendas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Total</th>
+            <th>Data/Hora</th>
+        </tr>
+        {% for venda in vendas %}
+        <tr>
+            <td>{{ venda.id }}</td>
+            <td>{{ venda.cliente.nome }}</td>
+            <td>R${{ venda.total }}</td>
+            <td>{{ venda.data_hora }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
